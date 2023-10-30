@@ -46,6 +46,7 @@ function App() {
   let context = {account, setAccount};
 
   return (
+    
     <div className="App">
       <AccountContext.Provider value = {context}>
         <BrowserRouter>
