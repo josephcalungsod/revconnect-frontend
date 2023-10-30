@@ -16,6 +16,8 @@ export function Navbar() {
                     <span> | </span>
                     <Link to = "/login">Login</Link>
                     <span> | </span>
+                    <Link to = "/logout">Logout</Link>
+                    <span> | </span>
                     <Link to = "/register">Register</Link>
                     <span> | </span>
                     <Link to = "/post">Post</Link>
