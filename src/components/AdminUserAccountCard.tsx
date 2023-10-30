@@ -5,7 +5,8 @@ import { APIUpdateAccountPasswordCall, APIUpdateAccountRoleCall } from "../servi
 import { AccountContext } from "../App";
 
 interface props {
-    account: Account
+    account: Account,
+    refreshAccountData: () => void
 }
 
 export function AdminUserAccountCard(props: props) {
@@ -38,6 +39,7 @@ export function AdminUserAccountCard(props: props) {
         .then(res => {
             console.log(res);
             console.log("Password changed!");
+            props.refreshAccountData();
         })
         .catch(res => {
             console.log(res);
@@ -51,6 +53,9 @@ export function AdminUserAccountCard(props: props) {
         // console.log("Password changed.")
     }
 
+    /**
+     * Update role of displayed user account via PUT request to backend
+     */
     function submitNewRole() {
         if(props.account.accountId === undefined){
             return;
@@ -60,33 +65,12 @@ export function AdminUserAccountCard(props: props) {
         .then(res => {
             console.log(res);
             console.log("Role changed!");
+            props.refreshAccountData();
         })
         .catch(res => {
             console.log(res);
             console.log("Something went wrong!");
         })
-    }
-    
-    /**
-     * Update role of displayed user account via PUT request to backend
-     * @param event 
-     */
-    function updateRoleInput(event:SyntheticEvent){        
-        /*
-        const newRole = (event.target as HTMLSelectElement).value
-        setRole(newRole);  
-    
-
-        // PUT method service call goes here w/ role passed in
-        if(props.account.accountId !== undefined){
-            
-            APIUpdateAccountRoleCall(props.account.accountId, role, accountContext.account) // AccountService method call w/ params: ..(accountId, role, logged in user context)
-            // .then(response => {
-            //     props.refreshRoleData(); // refresh. do we even need?
-            // })
-            console.log("Role set to: " + props.account.role)
-        }
-        */
     }
     
     return (
@@ -97,7 +81,7 @@ export function AdminUserAccountCard(props: props) {
                 <h6>Username: {props.account.accountName}</h6> 
                 
                 <h6>
-                    Password: {"**********"}
+                    Password: {props.account.password}
                     <br/>
                     <span> Change to: </span>
                     <input type="text" name="password" value={password} onChange={updatePasswordInput}></input>
