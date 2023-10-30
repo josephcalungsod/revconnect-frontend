@@ -1,15 +1,51 @@
-.postCardContainer{
-    
-}
-.postCardContainer img{
-    background-size: 150px;
-  width: 300px;
-  height: 300px;
-  border: 2px solid;
+.postCardContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(191, 227, 245, 0.612);
 }
 
-.postCardContainer h3{
-    float:right;
-    width:20%;
-    background:whitesmoke;
+.postCardContainer p{
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  border-radius: 10px;
 }
+
+.postCardContainer h6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.postCardContainer h6 button {
+  margin: 5px;
+}
+
+.postCardContainer h6 input {
+  margin: 0 5px;
+}
+
+.postCardContainer div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.postCardContainer div input {
+  width: 150px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.postCardContainer div button {
+  padding: 5px 10px;
+}
+

@@ -1,6 +1,6 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import { Comment } from "../models/Comment";
-
+import './css/CommentCard.css'
 /**
  * Provides Comment model from /src/models/Comment.tsx
  */
@@ -16,8 +16,9 @@ interface propsInterface {
 export function CommentCard(props: propsInterface) {
     return (
         <>
-            <div>                
-                <h6>Account: {props.comment.account.accountName}</h6> {/* displays Account name */}
+            <div className="commentCardContainer">                
+                <h4>{props.comment.account.accountName}</h4> {/* displays Account name */}
+                :
                 <p>{props.comment.comment}</p> {/* displays comment*/}
             </div>
         </>

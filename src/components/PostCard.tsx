@@ -5,6 +5,7 @@ import { putLikePostAPI } from "../service/PostService";
 import { AccountContext } from "../App";
 import { Comment } from "../models/Comment";
 import { CommentCard } from "./CommentCard";
+import './css/PostCard.css';
 
 interface propsInterface{
     post:Post
@@ -95,34 +96,34 @@ export function PostCard(props:propsInterface){
     return (
         <>
         <div className="postCardContainer">
-            <img src={props.post.imageUrl}></img>
-            <br/>
             {/* Probably will need to be displayed hidden or top 5-10 comments */}
-            <h3>{props.post.description}</h3>
-
-            <h6>
-                {/* Conditional render like button */}
+            <img src={props.post.imageUrl}></img>
+            <div>
+                <p>{props.post.description}</p>
+                <br />
+                <h6>
+               
+                     {/* Conditional render like button */}
                 
-                    {isClicked?
-                        (<button onClick={unlikePost}>Unlike</button>)
-                        :
-                        (<button onClick={likePost}>Like</button>)                        
-                    }                        
-                        {props.post.numberOfLikes}                        
-                        
-                
-            Post ID: {props.post.postId}
+                          {isClicked?
+                              (<button onClick={unlikePost}>Unlike</button>)
+                             :
+                             (<button onClick={likePost}>Like</button>)                        
+                         }                        
+                             {props.post.numberOfLikes}                        
+                    <br />           
+                 Post ID: {props.post.postId}
             </h6>
-
+            </div>
             
             <div>
-                Comment: <input value={commentInput} onChange={updateCommentInput}></input>
-                
+                Comment:<input value={commentInput} onChange={updateCommentInput}></input>
                 <button onClick = {addComment}>Submit</button>                
             </div>
 
-            {props.post.comments.map(comment => <CommentCard key={comment.id} comment={comment}></CommentCard>)}
+            {props.post.comments.map(comment => <CommentCard key={comment.id} comment={comment}></CommentCard>)}  
         </div>
+        
         </>
     )
 }
