@@ -13,6 +13,7 @@ export function RegisterForm() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const [role, setRole] = useState<Role>();
 
     const updateInput = (synthEvent: ChangeEvent<HTMLInputElement>) => {
         switch(synthEvent.target.name) {
@@ -37,6 +38,10 @@ export function RegisterForm() {
         }
     }
 
+    function handleRoleChange(event: ChangeEvent<HTMLSelectElement>): void {
+        setRole(event.target.value as Role);
+    }
+
     function register() {
         console.log("Attempting to register!");
 
@@ -47,7 +52,7 @@ export function RegisterForm() {
             lastName: lastName,
             email: email,
             phoneNumber: phoneNumber,
-            role: Role.PERSONAL,
+            role: role as Role,
             isDisabled: false
         }
 
@@ -80,6 +85,14 @@ export function RegisterForm() {
 
                 <label>Phone Number:</label>
                 <input name = "phoneNumber" value = {phoneNumber} onChange = {updateInput}></input>
+
+                <label>Role</label>
+                <select value = {role} onChange = {handleRoleChange}>
+                    <option value = {Role.CREATOR}>{Role.CREATOR}</option>
+                    <option value = {Role.PERSONAL}>{Role.PERSONAL}</option>
+                    <option value = {Role.BUSINESS}>{Role.BUSINESS}</option>
+                    <option value = {Role.ADMIN}>{Role.ADMIN}</option>
+                </select> 
 
                 <button onClick = {register}>Register</button>
             </div>
