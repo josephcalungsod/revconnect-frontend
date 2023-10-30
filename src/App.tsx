@@ -14,6 +14,7 @@ import { AdminUserAccountCard } from './components/AdminUserAccountCard';
 import { AdminUserAccountsList } from './components/AdminUserAccountsList';
 import { AdminPostsList } from './components/AdminPostsList';
 import { AdminNavbar } from './components/AdminNavbar';
+import { LogoutPage } from './pages/LogoutPage';
 
 export const AccountContext = createContext(
   {
@@ -54,6 +55,7 @@ function App() {
           <Routes>
             <Route path = "/" element = {<></>}></Route>
             <Route path = "/login" element = {<LoginForm></LoginForm>}></Route>
+            <Route path = "/logout" element = {<LogoutPage></LogoutPage>}></Route>
             <Route path = "/register" element = {<RegisterForm></RegisterForm>}></Route>
             <Route path = "/post" element = {<CreatePostPage></CreatePostPage>}></Route>
             <Route path = "/allPosts" element = {<PostsPage></PostsPage>}></Route>            
