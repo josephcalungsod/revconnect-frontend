@@ -13,10 +13,7 @@ export function AdminNavbar() {
     const accountContext = useContext(AccountContext);
 
     const [isAdmin, setIsAdmin] = useState(false);
-    
-    if(accountContext.account.role === Role.ADMIN){
-        setIsAdmin(true);
-    }    
+
 
     return (        
             <>  

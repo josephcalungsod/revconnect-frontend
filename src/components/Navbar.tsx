@@ -3,20 +3,10 @@ import { AccountContext } from "../App";
 import { useContext, useEffect, useState } from "react";
 import { Account } from "../models/Account";
 import { Role } from "../models/Role";
+import { AdminNavbar } from "./AdminNavbar";
 
-interface props{
-    account:Account
-    role:Role
-}
-
-export function Navbar(props:props) {
+export function Navbar() {
     const accountContext = useContext(AccountContext);
-
-    const [isAdmin, setIsAdmin] = useState(false);
-    
-    if(accountContext.account.role === Role.ADMIN){
-        setIsAdmin(true);
-    }    
 
     return (        
             <>        
@@ -32,6 +22,7 @@ export function Navbar(props:props) {
                     <span> | </span>
                     <Link to = "/allPosts">AllPosts</Link>    
                 </div>
+                {accountContext.account.role === Role.ADMIN ? <AdminNavbar></AdminNavbar> : <></>}
             </>
     )
     

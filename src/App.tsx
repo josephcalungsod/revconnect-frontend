@@ -48,7 +48,7 @@ function App() {
     <div className="App">
       <AccountContext.Provider value = {context}>
         <BrowserRouter>
-          <Navbar account={context.account} role={context.account.role}></Navbar>
+          <Navbar></Navbar>
           {/* {context.account.role === (Role.ADMIN)? (<><AdminNavbar/></>):(<></>)} */}
           
           <Routes>

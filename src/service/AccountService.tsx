@@ -36,13 +36,31 @@ export async function APIRegisterCall(account: Account) {
     )
 }
 
-export async function putRoleAPI(id:number, role:string, account:Account) {
+export async function APIUpdateAccountRoleCall(accountId: number, role: string, account: Account) {
     return await fetch (
-        "http://localhost:8080/account/{id}/",
+        `http://localhost:8080/account/${accountId}/`,
         {
             mode: "cors",
             method: "PUT",
-            body: JSON.stringify({role:Role}),
+            body: JSON.stringify({role: role}),
+            headers: {
+                "access-control-allow-origin": "*",
+                "access-control-allow-headers": "GET, POST, PUT, OPTIONS",
+                "content-type": "application/json",
+                "account-name": account.accountName,
+                "password": account.password
+            }
+        }
+    )
+}
+
+export async function APIUpdateAccountPasswordCall(accountId: number, password: string, account: Account) {
+    return await fetch (
+        `http://localhost:8080/account/${accountId}/`,
+        {
+            mode: "cors",
+            method: "PUT",
+            body: JSON.stringify({password: password}),
             headers: {
                 "access-control-allow-origin": "*",
                 "access-control-allow-headers": "GET, POST, PUT, OPTIONS",

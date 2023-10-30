@@ -2,7 +2,6 @@ import { SyntheticEvent, useContext, useState } from "react";
 import { AccountContext } from "../App";
 import { Account } from "../models/Account";
 import { Role } from "../models/Role";
-import { putRoleAPI } from "../service/AccountService";
 
 
 interface props{
@@ -31,7 +30,7 @@ export function AdminUserView(props:props){
 
         // PUT method service call goes here w/ role passed in
         if(props.account.accountId !== undefined){
-            putRoleAPI(props.account.accountId, role, accountContext.account) // AccountService method call w/ params: ..(accountId, role, logged in user context)
+            //putRoleAPI(props.account.accountId, role, accountContext.account) // AccountService method call w/ params: ..(accountId, role, logged in user context)
             // .then(response => {
             //     props.refreshRoleData(); // refresh. do we even need?
             // })
