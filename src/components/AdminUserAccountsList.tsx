@@ -6,7 +6,7 @@ import { AdminUserAccountCard } from "./AdminUserAccountCard";
 export function AdminUserAccountsList(){
     const [allAccounts, setAllAccounts] = useState<Account[]>([])
 
-    function refreshPostData(){
+    function refreshAccountData(){
         getAllAccountsAPI()
             .then(response => {
                 return response.json()
@@ -18,13 +18,13 @@ export function AdminUserAccountsList(){
     }
 
     useEffect(() => {
-        refreshPostData();
+        refreshAccountData();
     }, []);
 
     return (
         <>
         <h4>All Accounts</h4>
-            {allAccounts.map(account => <AdminUserAccountCard account={account} key={account.accountId}></AdminUserAccountCard>)}
+            {allAccounts.map(account => <AdminUserAccountCard refreshAccountData={refreshAccountData} account={account} key={account.accountId}></AdminUserAccountCard>)}
             
         </>
     )

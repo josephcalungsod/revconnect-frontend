@@ -34,6 +34,7 @@ export function LoginForm() {
             .then(account => {
                 console.log(account);
                 accountContext.setAccount(account);
+                navigate("/");
             })
             .catch((response) => console.log("Some error occurred!" + response))
     }
