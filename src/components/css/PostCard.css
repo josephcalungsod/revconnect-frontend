@@ -1,0 +1,15 @@
+.postCardContainer{
+    
+}
+.postCardContainer img{
+    background-size: 150px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid;
+}
+
+.postCardContainer h3{
+    float:right;
+    width:20%;
+    background:whitesmoke;
+}
