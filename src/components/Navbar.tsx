@@ -7,6 +7,43 @@ import { AdminNavbar } from "./AdminNavbar";
 
 export function Navbar() {
     const accountContext = useContext(AccountContext);
+    const [navBarLinks, setNavBarLinks] = useState<JSX.Element | null>(null);
+
+    useEffect(() => {
+        if(accountContext.account.accountName === "") {
+            setNavBarLinks(
+                <>
+                    <Link to = "/login">Login</Link>
+                    <span> | </span>
+                    <Link to = "/register">Register</Link>
+                </>
+            );
+        } else {
+            setNavBarLinks(
+                <>
+                    <Link to = "/logout">Logout</Link>
+                    <span> | </span>
+                    <Link to = "/post">Post</Link>
+                    <span> | </span>
+                    <Link to = "/allPosts">AllPosts</Link>
+                </>
+            );
+        }
+
+        if(accountContext.account.role === Role.ADMIN) {
+            setNavBarLinks(
+                <>
+                    <Link to = "/logout">Logout</Link>
+                    <span> | </span>
+                    <Link to = "/admin/accounts">Accounts List</Link>
+                    <span> | </span>
+                    <Link to = "/admin/posts">Posts List</Link>
+                </>
+            );
+        }
+
+        
+    }, [accountContext]);
 
     return (        
             <>        
@@ -14,17 +51,8 @@ export function Navbar() {
                 <div className="Navbar">
                     <Link to = "/">Home</Link>
                     <span> | </span>
-                    <Link to = "/login">Login</Link>
-                    <span> | </span>
-                    <Link to = "/logout">Logout</Link>
-                    <span> | </span>
-                    <Link to = "/register">Register</Link>
-                    <span> | </span>
-                    <Link to = "/post">Post</Link>
-                    <span> | </span>
-                    <Link to = "/allPosts">AllPosts</Link>    
+                    {navBarLinks}
                 </div>
-                {accountContext.account.role === Role.ADMIN ? <AdminNavbar></AdminNavbar> : <></>}
             </>
     )
     
