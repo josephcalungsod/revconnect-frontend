@@ -3,7 +3,7 @@ import { Role } from "../models/Role";
 
 export async function APILoginCall(accountName: string, password: string) {
     return await fetch (
-        "revconnect-backend.azurewebsites.net/account/login",
+        "https://revconnect-backend.azurewebsites.net/account/login",
         {
             mode: "cors",
             method: "POST",
@@ -22,7 +22,7 @@ export async function APILoginCall(accountName: string, password: string) {
 
 export async function APIRegisterCall(account: Account) {
     return await fetch (
-        "revconnect-backend.azurewebsites.net/account/register",
+        "https://revconnect-backend.azurewebsites.net/account/register",
         {
             mode: "cors",
             method: "POST",
@@ -38,7 +38,7 @@ export async function APIRegisterCall(account: Account) {
 
 export async function APIUpdateAccountRoleCall(accountId: number, role: string, account: Account) {
     return await fetch (
-        `revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
         {
             mode: "cors",
             method: "PUT",
@@ -56,7 +56,7 @@ export async function APIUpdateAccountRoleCall(accountId: number, role: string, 
 
 export async function APIUpdateAccountPasswordCall(accountId: number, password: string, account: Account) {
     return await fetch (
-        `revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
         {
             mode: "cors",
             method: "PUT",
@@ -78,7 +78,7 @@ export async function APIUpdateAccountPasswordCall(accountId: number, password: 
  */
 export async function getAllAccountsAPI() {
     return await fetch (
-        "revconnect-backend.azurewebsites.net/account",
+        "https://revconnect-backend.azurewebsites.net/account",
         {
             mode: "cors",
             method: "GET",

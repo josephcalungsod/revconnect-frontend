@@ -32,7 +32,7 @@ export async function postCommentAPI(id:number, comment:Comment){
  export async function getAllCommentsAPI(){
 
     return await fetch(
-        "revconnect-backend.azurewebsites.net/comments",
+        "https://revconnect-backend.azurewebsites.net/comments",
         {
             mode:"cors",
             method:"GET",

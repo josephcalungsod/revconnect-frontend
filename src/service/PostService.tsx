@@ -8,7 +8,7 @@ import { Post } from "../models/Post";
  */
  export async function postPostAPI(post:Post){
     return await fetch(
-        "revconnect-backend.azurewebsites.net/post",
+        "https://revconnect-backend.azurewebsites.net/post",
         {
             mode:"cors",
             method:"POST",
@@ -28,7 +28,7 @@ import { Post } from "../models/Post";
  */
 export async function putLikePostAPI(id: number, numberOfLikes: number){
     return await fetch(
-        `revconnect-backend.azurewebsites.net/post/${id}/${numberOfLikes}`,
+        `https://revconnect-backend.azurewebsites.net/post/${id}/${numberOfLikes}`,
         {
             mode:"cors",
             method:"PUT",            
@@ -47,7 +47,7 @@ export async function putLikePostAPI(id: number, numberOfLikes: number){
  export async function getAllPostsAPI(){
 
     return await fetch(
-        "revconnect-backend.azurewebsites.net/post",
+        "https://revconnect-backend.azurewebsites.net/post",
         {
             mode:"cors",
             method:"GET",
