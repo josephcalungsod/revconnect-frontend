@@ -13,7 +13,7 @@ export function RegisterForm() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    const [role, setRole] = useState<Role>();
+    const [role, setRole] = useState<Role>(Role.CREATOR);
 
     const updateInput = (synthEvent: ChangeEvent<HTMLInputElement>) => {
         switch(synthEvent.target.name) {
