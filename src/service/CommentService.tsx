@@ -11,7 +11,7 @@ import { Comment } from "../models/Comment";
  */
 export async function postCommentAPI(id:number, comment:Comment){
     return await fetch(
-        `http://localhost:8080/post/${id}/comment`,
+        `revconnect-backend.azurewebsites.net/post/${id}/comment`,
         {
             mode:"cors",
             method:"POST",
@@ -32,7 +32,7 @@ export async function postCommentAPI(id:number, comment:Comment){
  export async function getAllCommentsAPI(){
 
     return await fetch(
-        "http://localhost:8080/comments",
+        "revconnect-backend.azurewebsites.net/comments",
         {
             mode:"cors",
             method:"GET",
