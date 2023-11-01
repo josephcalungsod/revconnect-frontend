@@ -1,7 +1,6 @@
 import { ChangeEvent, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { APILoginCall } from "../service/AccountService";
-import { Account } from "../models/Account";
 import { AccountContext } from "../App";
 import './css/Login.css'
 
@@ -10,7 +9,6 @@ export function LoginForm() {
     const navigate = useNavigate();
     const [accountName, setAccountName] = useState("");
     const [password, setPassword] = useState("");
-    const [account, setAccount] = useState<Account>();
 
     const updateInput = (synthEvent: ChangeEvent<HTMLInputElement>) => {
         switch(synthEvent.target.name) {

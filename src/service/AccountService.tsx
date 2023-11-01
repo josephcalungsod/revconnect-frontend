@@ -36,7 +36,7 @@ export async function APIRegisterCall(account: Account) {
     )
 }
 
-export async function APIUpdateAccountRoleCall(accountId: number, role: string, account: Account) {
+export async function APIUpdateAccountRoleCall(accountId: number, role: Role, account: Account) {
     return await fetch (
         `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
         {
