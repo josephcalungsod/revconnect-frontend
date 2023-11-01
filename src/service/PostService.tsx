@@ -1,3 +1,4 @@
+import { Account } from "../models/Account";
 import { Post } from "../models/Post";
 
 
@@ -18,6 +19,7 @@ import { Post } from "../models/Post";
                 "access-control-allow-origin":"*",
                 "access-control-allow-headers":"GET, POST, OPTIONS",
                 "content-type":"application/json"
+                
             }
         })
 }
@@ -58,6 +60,24 @@ export async function putLikePostAPI(id: number, numberOfLikes: number){
                 "content-type":"application/json"
             }
         })
+    }
+
+    export async function deletePostAPI(post:Post, account:Account){
+        return await fetch(
+            "https://revconnect-backend.azurewebsites.net/post",
+            {
+                mode:"cors",
+                method:"DELETE",
+                body:JSON.stringify(post),
+                headers:
+                {
+                    "access-control-allow-origin":"*",
+                    "access-control-allow-headers":"GET, POST, DELETE, OPTIONS",
+                    "content-type":"application/json",
+                    "account-name": account.accountName,
+                    "password": account.password
+                }
+            })
     }
         
 
