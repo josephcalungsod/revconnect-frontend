@@ -26,7 +26,11 @@ export function LogoutPage() {
 
     return (
         <>
-
+            <br />
+            <br />
+            <br />
+            <br />
+           <h1>You've been Logged Out</h1> 
         </>
     )
 

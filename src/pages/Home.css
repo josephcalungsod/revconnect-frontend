@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.container img{
+  max-width: 50%;
+  margin: 100px auto;
+
+}
+
+.description{
+  max-width: 450px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 50px;
+}
+
+.description p{
+  font-size: larger;
+}
+
