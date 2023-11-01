@@ -7,6 +7,10 @@
     background-color: #0076fccf;
   }
   
+  .loginContainer:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(10, 216, 140, 0.573);
+  }
   .loginContainer label {
     display: block;
     margin: 10px 0;
@@ -30,4 +34,5 @@
     border-radius: 4px;
     cursor: pointer;
     color: black;
+    background-color: rgba(143, 188, 143, 0.632);
   }
