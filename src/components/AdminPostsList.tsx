@@ -24,11 +24,15 @@ export function AdminPostsList(){
     }, []);
     return (
         <>
-        <h1>All posts Admin view</h1>
-        <div>                
-        {allPosts.map(post => <AdminPostCard refreshPostData={refreshPostData} post={post} key={post.postId}></AdminPostCard>)}
-        </div>
-    
+            <h1>RevConnect</h1>
+            <h3>Where innovation meets Connectivity!!</h3>
+            <div>
+                <h2>All Posts</h2>
+                <h4>---You are currently in the Adminitrator View ---</h4>
+            </div>
+            <div>                
+                {allPosts.map(post => <AdminPostCard refreshPostData={refreshPostData} post={post} key={post.postId}></AdminPostCard>)}
+            </div>
         </>
     )
 }
