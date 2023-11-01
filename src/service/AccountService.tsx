@@ -114,10 +114,10 @@ export async function deleteAccountAPI(accountId: number, account: Account) {
         `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
         {
             mode: "cors",
-            method: "PUT",
+            method: "DELETE",
             headers: {
                 "access-control-allow-origin": "*",
-                "access-control-allow-headers": "GET, POST, PUT, OPTIONS",
+                "access-control-allow-headers": "GET, POST, PUT, DELETE, OPTIONS",
                 "content-type": "application/json",
                 "account-name": account.accountName,
                 "password": account.password
