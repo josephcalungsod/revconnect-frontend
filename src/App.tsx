@@ -13,6 +13,7 @@ import { LogoutPage } from './pages/LogoutPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { LoginPage } from './pages/LoginPage';
 import { AccountsPage } from './pages/AccountsPage';
+import { AccountPage } from './pages/AccountPage';
 import { Home } from './pages/Home';
 
 export const AccountContext = createContext(
@@ -55,6 +56,8 @@ function App() {
             <Route path = "/login" element = {<LoginPage></LoginPage>}></Route>
             <Route path = "/logout" element = {<LogoutPage></LogoutPage>}></Route>
             <Route path = "/register" element = {<RegisterPage></RegisterPage>}></Route>
+            {/* <Route path = "/account" element = {<AccountPage></AccountPage>}></Route> */}
+            <Route path = "/account/:accountName" element={<AccountPage></AccountPage>} />
             <Route path = "/post" element = {<CreatePostPage></CreatePostPage>}></Route>
             <Route path = "/allPosts" element = {<PostsPage></PostsPage>}></Route>            
             <Route path = "/admin/adminPage" element = {<AdminPage></AdminPage>}></Route>

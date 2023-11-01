@@ -26,6 +26,8 @@ export function Navbar() {
                     <Link to = "/post">Post</Link>
                     <span> | </span>
                     <Link to = "/allPosts">AllPosts</Link>
+                    <span> | </span>
+                    <Link to = "/account">Account</Link>
                 </>
             );
         }
@@ -38,6 +40,8 @@ export function Navbar() {
                     <Link to = "/admin/accounts">Accounts List</Link>
                     <span> | </span>
                     <Link to = "/admin/posts">Posts List</Link>
+                    <span> | </span>
+                    <Link to = "/account">Account</Link>
                 </>
             );
         }

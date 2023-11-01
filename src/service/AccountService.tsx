@@ -109,6 +109,21 @@ export async function getAllAccountsAPI() {
         }
     )
 }
+
+export async function getAccountByAccountNameAPI(accountName: string) {
+    return await fetch (
+        `https://revconnect-backend.azurewebsites.net/account/${accountName}`,
+        {
+            mode: "cors",
+            method: "GET",
+            headers: {
+                "access-control-allow-origin": "*",
+                "access-control-allow-headers": "GET, POST, OPTIONS",
+                "content-type": "application/json"
+            }
+        }
+    )
+}
 export async function deleteAccountAPI(accountId: number, account: Account) {
     return await fetch (
         `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
