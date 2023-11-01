@@ -71,10 +71,16 @@ export function AdminUserAccountCard(props: props) {
         if(props.account.accountId === undefined){
             return;
         }
-        deleteAccountAPI(props.account.accountId, accountContext.account);
+        deleteAccountAPI(props.account.accountId, accountContext.account)
+        .then(res =>{
+            console.log(res.status);
+            props.refreshAccountData();
+
+        })
+        .catch(res =>{
+            console.log(res);
+        })
         console.log("Deleted account, accountId: " + props.account.accountId)
-        console.log(props.account)
-        props.refreshAccountData();
     
     }
 
