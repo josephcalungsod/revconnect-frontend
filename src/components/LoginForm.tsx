@@ -37,7 +37,7 @@ export function LoginForm() {
                 if(account.role !== Role.ADMIN) {
                     navigate("/allPosts");
                 } else {
-                    navigate("/admin/adminPage");
+                    navigate("/");
                 }
                 
             })
