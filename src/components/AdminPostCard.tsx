@@ -1,5 +1,6 @@
 import { Post } from "../models/Post"
-import { CommentCard } from "./CommentCard"
+import { CommentCard } from "./CommentCard";
+import './css/AdminPostCard.css';
 
 interface props{
     post:Post
@@ -8,15 +9,12 @@ interface props{
 export function AdminPostCard(props:props){
     return (
         <>
-        <div>
+        <div className="adminPostContainer">
             <img src={props.post.imageUrl}></img>
             <br/>
             {/* Probably will need to be displayed hidden or top 5-10 comments */}
-            {props.post.description}
-
-            <h6>
-                Post ID: {props.post.postId}
-            </h6>
+            <p style={{margin:"-5px"}}>Description: {props.post.description}</p>
+            <p>Post ID: {props.post.postId}</p>
 
             {props.post.comments.map(comment => <CommentCard key={comment.id} comment={comment}></CommentCard>)}
 

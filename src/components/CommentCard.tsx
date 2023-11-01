@@ -17,9 +17,8 @@ export function CommentCard(props: propsInterface) {
     return (
         <>
             <div className="commentCardContainer">                
-                <h4>{props.comment.account.accountName}</h4> {/* displays Account name */}
-                :
-                <p>{props.comment.comment}</p> {/* displays comment*/}
+                <h4>Username: {props.comment.account.accountName}</h4> {/* displays Account name */}
+                <p>Comment: {props.comment.comment}</p> {/* displays comment*/}
             </div>
         </>
     )
