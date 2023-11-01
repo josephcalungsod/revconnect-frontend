@@ -20,6 +20,7 @@ export function AdminPostCard(props:props){
         props.refreshPostData();
     
     }
+    
     return (
         <>
         <div className="postCardContainer">

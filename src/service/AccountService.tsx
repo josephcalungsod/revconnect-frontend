@@ -54,6 +54,25 @@ export async function APIUpdateAccountRoleCall(accountId: number, role: string, 
     )
 }
 
+//disable
+// export async function APIUpdateAccountIsDisabledCall(accountId: number, account: Account) {
+//     return await fetch (
+//         `https://revconnect-backend.azurewebsites.net/account/${accountId}/disable`,
+//         {
+//             mode: "cors",
+//             method: "PUT",            
+//             headers: {
+//                 "access-control-allow-origin": "*",
+//                 "access-control-allow-headers": "GET, POST, PUT, OPTIONS",
+//                 "content-type": "application/json",
+//                // body: JSON.stringify({accountId}),
+//                 "account-name": account.accountName,
+//                 "password": account.password
+//             }
+//         }
+//     )
+// }
+
 export async function APIUpdateAccountPasswordCall(accountId: number, password: string, account: Account) {
     return await fetch (
         `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
@@ -90,3 +109,20 @@ export async function getAllAccountsAPI() {
         }
     )
 }
+// export async function deleteAccountAPI(accountId: number, userAccount: Account, account: Account) {
+//     return await fetch (
+//         `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+//         {
+//             mode: "cors",
+//             method: "PUT",
+//             body: JSON.stringify({account: userAccount}),
+//             headers: {
+//                 "access-control-allow-origin": "*",
+//                 "access-control-allow-headers": "GET, POST, PUT, OPTIONS",
+//                 "content-type": "application/json",
+//                 "account-name": account.accountName,
+//                 "password": account.password
+//             }
+//         }
+//     )
+// }
