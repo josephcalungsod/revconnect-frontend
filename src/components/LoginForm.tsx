@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { APILoginCall } from "../service/AccountService";
 import { AccountContext } from "../App";
 import './css/Login.css'
+import { Role } from "../models/Role";
 
 export function LoginForm() {
     const accountContext = useContext(AccountContext);
@@ -32,7 +33,13 @@ export function LoginForm() {
             .then(account => {
                 console.log(account);
                 accountContext.setAccount(account);
-                navigate("/");
+
+                if(account.role !== Role.ADMIN) {
+                    navigate("/allPosts");
+                } else {
+                    navigate("/admin/adminPage");
+                }
+                
             })
             .catch((response) => {
                 console.log("Some error occurred!" + response)

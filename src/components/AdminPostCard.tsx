@@ -2,23 +2,20 @@ import { Post } from "../models/Post"
 import { deletePostAPI } from "../service/PostService"
 import { CommentCard } from "./CommentCard"
 
-interface props{
-    post:Post
+interface Props {
+    post: Post,
     refreshPostData: () => void
 }
 
-
-
-
-
-export function AdminPostCard(props:props){
-
-    function deletePost(){
-        deletePostAPI(props.post, props.post.account);
-        console.log("Deleted post, postId: " + props.post.postId)
-        console.log(props.post)
-        props.refreshPostData();
-    
+export function AdminPostCard(props: Props){
+    function deletePost() {
+        deletePostAPI(props.post, props.post.account)
+            .then(response => {
+                console.log(response);
+                console.log("Deleted post, postId: " + props.post.postId);
+                console.log(props.post);
+                props.refreshPostData();
+            })
     }
     
     return (
