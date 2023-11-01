@@ -8,6 +8,11 @@
     background-color: #6897e8;
 }
 
+.registerContainer:hover{
+  transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .registerContainer label{
     display: block;
     margin: 10px 0;
