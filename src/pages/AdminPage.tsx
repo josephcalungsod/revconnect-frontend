@@ -1,10 +1,22 @@
+import { useContext, useEffect } from "react";
 import { AdminNavbar } from "../components/AdminNavbar";
 import { AdminPostsList } from "../components/AdminPostsList";
 import { AdminUserAccountsList } from "../components/AdminUserAccountsList";
+import { AccountContext } from "../App";
+import { Role } from "../models/Role";
+import { useNavigate } from "react-router-dom";
 
 
 export function AdminPage(){
-    
+    const accountContext = useContext(AccountContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(accountContext.account.role !== Role.ADMIN) {
+            navigate("/");
+        }
+    }, []);
+
     return (
         <>
             <AdminNavbar/>

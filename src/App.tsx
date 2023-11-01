@@ -8,11 +8,11 @@ import { PostsPage } from './pages/PostsPage';
 import { Account } from './models/Account';
 import { Role } from './models/Role';
 import { AdminPage } from './pages/AdminPage';
-import { AdminUserAccountsList } from './components/AdminUserAccountsList';
 import { AdminPostsList } from './components/AdminPostsList';
 import { LogoutPage } from './pages/LogoutPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { LoginPage } from './pages/LoginPage';
+import { AccountsPage } from './pages/AccountsPage';
 
 export const AccountContext = createContext(
   {
@@ -58,7 +58,7 @@ function App() {
             <Route path = "/allPosts" element = {<PostsPage></PostsPage>}></Route>            
             <Route path = "/admin/adminPage" element = {<AdminPage></AdminPage>}></Route>
             <Route path = "/admin/posts" element = {<AdminPostsList></AdminPostsList>}></Route>
-            <Route path = "/admin/accounts" element = {<AdminUserAccountsList></AdminUserAccountsList>}></Route>
+            <Route path = "/admin/accounts" element = {<AccountsPage></AccountsPage>}></Route>
           </Routes>
         </BrowserRouter>
       </AccountContext.Provider>
