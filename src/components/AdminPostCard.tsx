@@ -1,4 +1,5 @@
 import { Post } from "../models/Post"
+import { deletePostAPI } from "../service/PostService";
 import { CommentCard } from "./CommentCard";
 import './css/AdminPostCard.css';
 
