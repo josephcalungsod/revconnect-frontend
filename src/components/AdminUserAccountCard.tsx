@@ -75,7 +75,7 @@ export function AdminUserAccountCard(props: props) {
     
     return (
         <>
-            <div>                
+            <div className="postCardContainer">                
                 <h6>Account ID: {props.account.accountId}</h6> 
                 
                 <h6>Username: {props.account.accountName}</h6> 

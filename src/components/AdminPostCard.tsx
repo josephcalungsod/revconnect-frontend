@@ -8,7 +8,7 @@ interface props{
 export function AdminPostCard(props:props){
     return (
         <>
-        <div>
+        <div className="postCardContainer">
             <img src={props.post.imageUrl}></img>
             <br/>
             {/* Probably will need to be displayed hidden or top 5-10 comments */}
