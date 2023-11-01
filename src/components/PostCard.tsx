@@ -8,23 +8,14 @@ import { CommentCard } from "./CommentCard";
 import './css/PostCard.css';
 
 interface propsInterface{
-    post:Post
+    post: Post,
     refreshPostData: () => void
 }
 
 export function PostCard(props:propsInterface){
-
     const accountContext = useContext(AccountContext);
     const [postLikesInput, setPostLikesInput] = useState(0);
-
     const [commentInput, setCommentInput] = useState("");
-
-    // const [postId, setPostIdInput] = useState("");
-    // const [postAccount, setPostAccountInput] = useState("");
-    // const [postImageUrl, setPostImageUrlInput] = useState("");
-    // const [postDescription, setPostDescriptionInput] = useState("");
-    // const [postComments, setPostCommentsInput] = useState([]);
-
     const [isClicked, setIsClicked] = useState(false);
 
     function updateCommentInput(event:SyntheticEvent){
@@ -80,15 +71,16 @@ export function PostCard(props:propsInterface){
 
         }
         
-        if(props.post.postId !== undefined){        
-            postCommentAPI(props.post.postId, newComment)
-            .then(response => {
-                props.refreshPostData();
-         
-        })
-        console.log("Comment posted.")
-
+        if(props.post.postId === undefined){        
+            return;
         }
+
+        postCommentAPI(props.post.postId, newComment)
+            .then(response => {
+                console.log("Comment posted.");
+                setCommentInput("");
+                props.refreshPostData();
+            })
     }
     
      
