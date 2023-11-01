@@ -11,7 +11,7 @@ import { Comment } from "../models/Comment";
  */
 export async function postCommentAPI(id:number, comment:Comment){
     return await fetch(
-        `revconnect-backend.azurewebsites.net/post/${id}/comment`,
+        `https://revconnect-backend.azurewebsites.net/post/${id}/comment`,
         {
             mode:"cors",
             method:"POST",

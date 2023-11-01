@@ -26,15 +26,18 @@ export function LoginForm() {
 
         APILoginCall(accountName, password)
             .then(response => {
-                console.log(response);
-                return response.json()
+                console.log(response.body);
+                return response.json();
             })
             .then(account => {
                 console.log(account);
                 accountContext.setAccount(account);
                 navigate("/");
             })
-            .catch((response) => console.log("Some error occurred!" + response))
+            .catch((response) => {
+                console.log("Some error occurred!" + response)
+                alert("Wrong creditials! Please try again.");
+            })
     }
 
     function redirectToRegister() {
@@ -53,6 +56,7 @@ export function LoginForm() {
 
                 <button onClick = {login}>Login</button>
                 <button onClick = {redirectToRegister}>Create an account</button>
+
             </div>
         </>
     )

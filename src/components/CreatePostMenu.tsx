@@ -2,9 +2,11 @@ import { SyntheticEvent, useContext, useState } from "react";
 import { AccountContext } from "../App";
 import { Post } from "../models/Post";
 import { postPostAPI } from "../service/PostService";
+import { useNavigate } from "react-router";
 import './css/Post.css'
 
 export function CreatePostMenu() {
+    const navigate = useNavigate();
     const accountContext = useContext(AccountContext);
 
     const [imageUrl, setImageUrlInput] = useState("");
@@ -24,6 +26,15 @@ export function CreatePostMenu() {
     function submitPost() {
         console.log("Submitting a new post!")
 
+        if(imageUrl === "") {
+            alert("Image URL cannot be empty");
+            return;
+        }else if(description === ""){
+            alert("Description cannot be empty");
+            return;
+        }
+        
+
         const post: Post = {
             account: accountContext.account,
             imageUrl: imageUrl,
@@ -35,8 +46,13 @@ export function CreatePostMenu() {
         postPostAPI(post)
             .then(response => {
                 console.log(response);
+                if(response.status === 201){
+                    navigate("/allPosts");
+                }
             })
             .catch((response) => console.log("Some error occurred!" + response))
+
+            
     }
 
     return (
