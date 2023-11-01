@@ -89,6 +89,7 @@ export function PostCard(props:propsInterface){
         <>
         <div className="postCardContainer">
             {/* Probably will need to be displayed hidden or top 5-10 comments */}
+            {props.post.account.role}
             <img src={props.post.imageUrl}></img>
             <div>
                 <p>{props.post.description}</p>
@@ -112,7 +113,7 @@ export function PostCard(props:propsInterface){
                 Comment:<input value={commentInput} onChange={updateCommentInput}></input>
                 <button onClick = {addComment}>Submit</button>                
             </div>
-
+                
             {props.post.comments.map(comment => <CommentCard key={comment.id} comment={comment}></CommentCard>)}  
         </div>
         

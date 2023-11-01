@@ -45,12 +45,6 @@ export function AdminUserAccountCard(props: props) {
             console.log(res);
             console.log("Something went wrong!");
         })
-
-        // putPasswordAPI(props.account.accountId, password, accountContext.account) // AccountService method call w/ params: ..(accountId, newPassword, logged in user context)
-        // .then(response => {
-        //     props.refreshRoleData(); // refresh. do we even need?
-        // })
-        // console.log("Password changed.")
     }
 
     /**
@@ -72,10 +66,36 @@ export function AdminUserAccountCard(props: props) {
             console.log("Something went wrong!");
         })
     }
+
+    // function deleteAccount(){
+    //     deleteAccountAPI(props.account, accountContext.account);
+    //     console.log("Deleted account, accountId: " + props.account.accountId)
+    //     console.log(props.post)
+    //     props.refreshAccountData();
+    
+    // }
+
+    // const [isChecked, setIsChecked] = useState(false);
+
+    // function disableAccount() {
+    //     setIsChecked(!isChecked);
+    //     console.log(isChecked)
+    //     disable();
+    // };
+
+    // function disable() {
+    //     if (isChecked) {
+    //         if(props.account.accountId === undefined){
+    //             return;
+    //         }                    
+    //     APIUpdateAccountIsDisabledCall(props.account.accountId, accountContext.account);
+            
+    //     }
+    // };
     
     return (
         <>
-            <div>                
+            <div className="postCardContainer">                
                 <h6>Account ID: {props.account.accountId}</h6> 
                 
                 <h6>Username: {props.account.accountName}</h6> 
@@ -99,7 +119,7 @@ export function AdminUserAccountCard(props: props) {
                 <h6>
                     Role: {props.account.role}
                     <br/>
-                    <span> Change to: </span>
+                    <label> Change to: </label>
                     <select value={role} onChange={handleRoleChange}>
                         <option value={Role.CREATOR}>{Role.CREATOR}</option>
                         <option value={Role.PERSONAL}>{Role.PERSONAL}</option>
@@ -108,6 +128,13 @@ export function AdminUserAccountCard(props: props) {
                     </select> 
                     <button onClick={submitNewRole}>Change</button> 
                 </h6>
+                {/* <button onClick={deleteAccount}><text style={{ color: 'red' }}>DELETE</text></button> */}
+                
+{/*                 
+                    <label>Disable: </label>
+                    <input type="checkbox" onChange={disableAccount} checked={isChecked} /> */}
+                
+                
             </div>
         </>
     )
