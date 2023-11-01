@@ -1,7 +1,7 @@
 import { ChangeEvent, SyntheticEvent, useContext, useState } from "react";
 import { Account } from "../models/Account"
 import { Role } from "../models/Role"
-import { APIUpdateAccountPasswordCall, APIUpdateAccountRoleCall } from "../service/AccountService";
+import { APIUpdateAccountPasswordCall, APIUpdateAccountRoleCall, deleteAccountAPI } from "../service/AccountService";
 import { AccountContext } from "../App";
 
 interface props {
@@ -67,13 +67,16 @@ export function AdminUserAccountCard(props: props) {
         })
     }
 
-    // function deleteAccount(){
-    //     deleteAccountAPI(props.account, accountContext.account);
-    //     console.log("Deleted account, accountId: " + props.account.accountId)
-    //     console.log(props.post)
-    //     props.refreshAccountData();
+    function deleteAccount(){
+        if(props.account.accountId === undefined){
+            return;
+        }
+        deleteAccountAPI(props.account.accountId, accountContext.account);
+        console.log("Deleted account, accountId: " + props.account.accountId)
+        console.log(props.account)
+        props.refreshAccountData();
     
-    // }
+    }
 
     // const [isChecked, setIsChecked] = useState(false);
 
@@ -128,7 +131,7 @@ export function AdminUserAccountCard(props: props) {
                     </select> 
                     <button onClick={submitNewRole}>Change</button> 
                 </h6>
-                {/* <button onClick={deleteAccount}><text style={{ color: 'red' }}>DELETE</text></button> */}
+                <button onClick={deleteAccount}><text style={{ color: 'red' }}>DELETE</text></button>
                 
 {/*                 
                     <label>Disable: </label>

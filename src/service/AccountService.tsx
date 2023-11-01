@@ -109,20 +109,19 @@ export async function getAllAccountsAPI() {
         }
     )
 }
-// export async function deleteAccountAPI(accountId: number, userAccount: Account, account: Account) {
-//     return await fetch (
-//         `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
-//         {
-//             mode: "cors",
-//             method: "PUT",
-//             body: JSON.stringify({account: userAccount}),
-//             headers: {
-//                 "access-control-allow-origin": "*",
-//                 "access-control-allow-headers": "GET, POST, PUT, OPTIONS",
-//                 "content-type": "application/json",
-//                 "account-name": account.accountName,
-//                 "password": account.password
-//             }
-//         }
-//     )
-// }
+export async function deleteAccountAPI(accountId: number, account: Account) {
+    return await fetch (
+        `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        {
+            mode: "cors",
+            method: "PUT",
+            headers: {
+                "access-control-allow-origin": "*",
+                "access-control-allow-headers": "GET, POST, PUT, OPTIONS",
+                "content-type": "application/json",
+                "account-name": account.accountName,
+                "password": account.password
+            }
+        }
+    )
+}

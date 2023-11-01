@@ -13,6 +13,7 @@ import { LogoutPage } from './pages/LogoutPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { LoginPage } from './pages/LoginPage';
 import { AccountsPage } from './pages/AccountsPage';
+import { Home } from './pages/Home';
 
 export const AccountContext = createContext(
   {
