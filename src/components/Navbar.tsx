@@ -44,9 +44,9 @@ export function Navbar() {
                 <>
                     <Link to = "/logout">Logout</Link>
                     <span> | </span>
-                    <Link to = "/admin/accounts">Accounts List</Link>
+                    <Link to = "/admin/accounts">(admin) Accounts List</Link>
                     <span> | </span>
-                    <Link to = "/admin/posts">Posts List</Link>
+                    <Link to = "/admin/posts">(admin) Posts List</Link>
                     {/* <span> | </span> */}
                     {/* <Link to = "/account">Account</Link> */}
                 </>
