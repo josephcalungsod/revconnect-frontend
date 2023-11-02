@@ -114,7 +114,7 @@ export function AdminUserAccountCard(props: props) {
                 <h6>Username: {props.account.accountName}</h6> 
                 
                 <h6>
-                    Current Password: {props.account.password}                    
+                    Current Password: {props.account.password}
                     <input type="text" name="password" value={password} onChange={updatePasswordInput}></input>
                     <button onClick={submitNewPassword}>Change</button>                    
                 </h6> 
@@ -129,14 +129,12 @@ export function AdminUserAccountCard(props: props) {
                 
                 <h6>
                     Role: {props.account.role}
-                    <br/>
-                    <label> Change to: </label>
                     <select value={role} onChange={handleRoleChange}>
                         <option value={Role.CREATOR}>{Role.CREATOR}</option>
                         <option value={Role.PERSONAL}>{Role.PERSONAL}</option>
                         <option value={Role.BUSINESS}>{Role.BUSINESS}</option>
                         <option value={Role.ADMIN}>{Role.ADMIN}</option>
-                    </select> 
+                    </select>                     
                     <button onClick={submitNewRole}>Change</button> 
                 </h6>
                 <button onClick={deleteAccount}><text style={{ color: 'red' }}>DELETE</text></button>
