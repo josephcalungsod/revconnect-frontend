@@ -105,7 +105,7 @@ export function PostCard(props:propsInterface){
                              :
                              (<button onClick={likePost}>Like</button>)                        
                          }                        
-                             {props.post.numberOfLikes}                        
+                             Likes: {props.post.numberOfLikes}                        
                     <br />           
                  Post ID: {props.post.postId}
             </h6>
