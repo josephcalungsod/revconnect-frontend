@@ -18,7 +18,7 @@ export function Home(){
                 <h2>Innovasion meets Connectivity :)</h2>
                 <p>Welcome to the vibrant hub of RevConnect, 
                     where groundbreaking innovation intertwines seamlessly with the power of connectivity. 
-                    Here, we embark on a journey that celebrates the enerhy of ideas, 
+                    Here, we embark on a journey that celebrates the energy of ideas, 
                     technology, and the endless possibilities within the digital realm.</p>
             </div>
         </div>
