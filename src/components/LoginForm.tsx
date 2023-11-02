@@ -5,12 +5,18 @@ import { AccountContext } from "../App";
 import './css/Login.css'
 import { Role } from "../models/Role";
 
+/**
+ * Login Form component.
+ * User inputs username/password to log in.
+ * @returns 
+ */
 export function LoginForm() {
     const accountContext = useContext(AccountContext);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     const [accountName, setAccountName] = useState("");
     const [password, setPassword] = useState("");
 
+    // sets username/password to be sent to backend
     const updateInput = (synthEvent: ChangeEvent<HTMLInputElement>) => {
         switch(synthEvent.target.name) {
             case "accountName":
@@ -35,11 +41,10 @@ export function LoginForm() {
                 accountContext.setAccount(account);
 
                 if(account.role !== Role.ADMIN) {
-                    navigate("/allPosts");
+                    navigate("/allPosts"); // redirects to all posts page
                 } else {
-                    navigate("/");
-                }
-                
+                    navigate("/"); // redirects to default home page
+                }                
             })
             .catch((response) => {
                 console.log("Some error occurred!" + response)
@@ -48,7 +53,7 @@ export function LoginForm() {
     }
 
     function redirectToRegister() {
-        navigate("/register");
+        navigate("/register"); // redirects to register page
     }
 
     return (
