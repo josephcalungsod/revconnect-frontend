@@ -3,7 +3,7 @@ import { AccountContext } from "../App";
 import { useContext, useEffect, useState } from "react";
 import { Account } from "../models/Account";
 import { Role } from "../models/Role";
-import { AdminNavbar } from "./AdminNavbar";
+import { AdminNavbar } from "../NOT-IN-USE/AdminNavbar";
 
 /**
  * Displays Navbar. 
