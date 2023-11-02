@@ -67,15 +67,19 @@ export function AdminUserAccountCard(props: props) {
         })
     }
 
+    /**
+     * Delete Account logic
+     * @returns 
+     */
     function deleteAccount(){
         if(props.account.accountId === undefined){
             return;
         }
+        // Sends account Id and logged in user info to backend
         deleteAccountAPI(props.account.accountId, accountContext.account)
         .then(res =>{
             console.log(res.status);
             props.refreshAccountData();
-
         })
         .catch(res =>{
             console.log(res);
@@ -139,9 +143,8 @@ export function AdminUserAccountCard(props: props) {
                 </h6>
                 <button onClick={deleteAccount}><text style={{ color: 'red' }}>DELETE</text></button>
                 
-{/*                 
-                    <label>Disable: </label>
-                    <input type="checkbox" onChange={disableAccount} checked={isChecked} /> */}
+                {/* <label>Disable: </label> */}
+                    {/* <input type="checkbox" onChange={disableAccount} checked={isChecked} /> */}
                 
                 
             </div>

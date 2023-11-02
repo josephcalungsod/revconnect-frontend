@@ -9,6 +9,10 @@ import { Role } from "../models/Role";
 //     role:Role
 // }
 
+/**
+ * Displays Admin featured Navbar
+ * @returns 
+ */
 export function AdminNavbar() {
     const accountContext = useContext(AccountContext);
 

@@ -64,21 +64,20 @@ export function PostCard(props:propsInterface){
      * Adds new comment to current post
      */
     function addComment(){
-        const newComment:Comment = {
-            
+        const newComment:Comment = {            
             account: accountContext.account,
             comment: commentInput
-
         }
         
         if(props.post.postId === undefined){        
             return;
         }
-
+        // Sends post id and user input input comment to backend        
         postCommentAPI(props.post.postId, newComment)
             .then(response => {
                 console.log("Comment posted.");
                 setCommentInput("");
+                // re-renders view
                 props.refreshPostData();
             })
     }
@@ -88,9 +87,12 @@ export function PostCard(props:propsInterface){
     return (
         <>
         <div className="postCardContainer">
-            {/* Probably will need to be displayed hidden or top 5-10 comments */}
-            {props.post.account.role}
+            {/* Probably should only display hidden or top 5-10 comments */}
+            
+            {/* Indivivdual post */}
+            {props.post.account.accountName}
             <img src={props.post.imageUrl}></img>
+            {props.post.account.role}
             <div>
                 <p>{props.post.description}</p>
                 <br />
@@ -110,11 +112,13 @@ export function PostCard(props:propsInterface){
             </div>
             
             <div>
+                {/* User input comment box */}
                 Comment:<input value={commentInput} onChange={updateCommentInput}></input>
                 <button onClick = {addComment}>Submit</button>                
             </div>
                 
-            {props.post.comments.map(comment => <CommentCard key={comment.id} comment={comment}></CommentCard>)}  
+            {/* Displays all comments attached to post */}
+            {props.post.comments.map(comment => <CommentCard key={comment.id} comment={comment}></CommentCard>).reverse()} 
         </div>
         
         </>

@@ -5,6 +5,13 @@ import { Account } from "../models/Account";
 import { Role } from "../models/Role";
 import { AdminNavbar } from "./AdminNavbar";
 
+/**
+ * Displays Navbar. 
+ * Login/Register renders when accountName=null
+ * Logout/Post/AllPosts renders when accountName is not null
+ * AdminNavBar conditionally rendered when role=ADMIN
+ * @returns 
+ */
 export function Navbar() {
     const accountContext = useContext(AccountContext);
     const [navBarLinks, setNavBarLinks] = useState<JSX.Element | null>(null);
@@ -26,8 +33,8 @@ export function Navbar() {
                     <Link to = "/post">Post</Link>
                     <span> | </span>
                     <Link to = "/allPosts">AllPosts</Link>
-                    <span> | </span>
-                    <Link to = "/account">Account</Link>
+                    {/* <span> | </span> */}
+                    {/* <Link to = "/account">Account</Link> */}
                 </>
             );
         }
@@ -40,8 +47,8 @@ export function Navbar() {
                     <Link to = "/admin/accounts">Accounts List</Link>
                     <span> | </span>
                     <Link to = "/admin/posts">Posts List</Link>
-                    <span> | </span>
-                    <Link to = "/account">Account</Link>
+                    {/* <span> | </span> */}
+                    {/* <Link to = "/account">Account</Link> */}
                 </>
             );
         }
@@ -51,7 +58,7 @@ export function Navbar() {
 
     return (        
             <>        
-                <p>CURRENT USER: Username = {accountContext.account.accountName}; Role = {accountContext.account.role}</p>
+                {/* <p>CURRENT USER: Username = {accountContext.account.accountName}; Role = {accountContext.account.role}</p> */}
                 <div className="Navbar">
                     <Link to = "/">Home</Link>
                     <span> | </span>
