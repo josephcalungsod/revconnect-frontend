@@ -30,6 +30,7 @@ export function AdminPostCard(props: Props){
         <div className="adminPostContainer">
             {props.post.account.accountName}
             <img src={props.post.imageUrl}></img>
+            {props.post.account.role}
             <br/>
             {/* Probably will need to be displayed hidden or top 5-10 comments */}
             <p style={{margin:"-5px"}}>Description: {props.post.description}</p>

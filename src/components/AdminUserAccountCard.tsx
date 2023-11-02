@@ -114,9 +114,7 @@ export function AdminUserAccountCard(props: props) {
                 <h6>Username: {props.account.accountName}</h6> 
                 
                 <h6>
-                    Password: {props.account.password}
-                    <br/>
-                    <span> Change to: </span>
+                    Current Password: {props.account.password}                    
                     <input type="text" name="password" value={password} onChange={updatePasswordInput}></input>
                     <button onClick={submitNewPassword}>Change</button>                    
                 </h6> 
