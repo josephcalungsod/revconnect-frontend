@@ -15,7 +15,7 @@ export function Home(){
         <div className="container">
             <img className="img" src="https://lh3.googleusercontent.com/du1Lbdrk5jh73nyvT3ACcrTVnjjn7Q6fWn0oI8uXaALLkrT4jALbndRNjJdWa_RSXcl4XeM3dXYrItAQTQmMxDnezUkJ0cXubc4a_fk3yffWRnkmH4xQ=w1100"/>
             <div className="description">
-                <h2>Innovasion meets Connectivity :)</h2>
+                <h2>Innovation meets Connectivity :)</h2>
                 <p>Welcome to the vibrant hub of RevConnect, 
                     where groundbreaking innovation intertwines seamlessly with the power of connectivity. 
                     Here, we embark on a journey that celebrates the energy of ideas, 
