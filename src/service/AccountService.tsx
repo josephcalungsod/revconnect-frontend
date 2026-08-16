@@ -3,7 +3,9 @@ import { Role } from "../models/Role";
 
 export async function APILoginCall(accountName: string, password: string) {
     return await fetch (
-        "https://revconnect-backend.azurewebsites.net/account/login",
+        // "https://revconnect-backend.azurewebsites.net/account/login",
+        "http://localhost:8080/account/login",
+
         {
             mode: "cors",
             method: "POST",
@@ -22,7 +24,9 @@ export async function APILoginCall(accountName: string, password: string) {
 
 export async function APIRegisterCall(account: Account) {
     return await fetch (
-        "https://revconnect-backend.azurewebsites.net/account/register",
+        // "https://revconnect-backend.azurewebsites.net/account/register",
+        "http://localhost:8080/account/register",
+
         {
             mode: "cors",
             method: "POST",
@@ -38,7 +42,9 @@ export async function APIRegisterCall(account: Account) {
 
 export async function APIUpdateAccountRoleCall(accountId: number, role: Role, account: Account) {
     return await fetch (
-        `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        // `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        `http://localhost:8080/account/${accountId}/`,
+
         {
             mode: "cors",
             method: "PUT",
@@ -75,7 +81,9 @@ export async function APIUpdateAccountRoleCall(accountId: number, role: Role, ac
 
 export async function APIUpdateAccountPasswordCall(accountId: number, password: string, account: Account) {
     return await fetch (
-        `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        // `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        `http://localhost:8080/account/${accountId}/`,
+
         {
             mode: "cors",
             method: "PUT",
@@ -97,7 +105,9 @@ export async function APIUpdateAccountPasswordCall(accountId: number, password: 
  */
 export async function getAllAccountsAPI() {
     return await fetch (
-        "https://revconnect-backend.azurewebsites.net/account",
+        // "https://revconnect-backend.azurewebsites.net/account",
+        "http://localhost:8080/account/",
+
         {
             mode: "cors",
             method: "GET",
@@ -112,7 +122,9 @@ export async function getAllAccountsAPI() {
 
 export async function getAccountByAccountNameAPI(accountName: string) {
     return await fetch (
-        `https://revconnect-backend.azurewebsites.net/account/${accountName}`,
+        // `https://revconnect-backend.azurewebsites.net/account/${accountName}`,
+        `http://localhost:8080/account/${accountName}`,
+
         {
             mode: "cors",
             method: "GET",
@@ -126,7 +138,9 @@ export async function getAccountByAccountNameAPI(accountName: string) {
 }
 export async function deleteAccountAPI(accountId: number, account: Account) {
     return await fetch (
-        `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        // `https://revconnect-backend.azurewebsites.net/account/${accountId}/`,
+        `http://localhost:8080/account/${accountId}`,
+
         {
             mode: "cors",
             method: "DELETE",

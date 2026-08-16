@@ -42,6 +42,7 @@ function App() {
     phoneNumber: "",
     role: Role.PERSONAL,
     isDisabled: false
+    // isDisabled: true
   });
   let context = {account, setAccount};
 
